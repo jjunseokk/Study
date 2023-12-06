@@ -137,46 +137,138 @@
 //   console.log(result2);
 // }
 // play('010-1111-2222', cutZero, removeDash)
-function play() {
-    let get = document.querySelector(".get");
-    let link = document.querySelectorAll('.link');
-    if (get instanceof HTMLImageElement) {
-        get.src = "/cute.jpg";
-    }
-    link.forEach((a) => {
-        if (a instanceof HTMLAnchorElement) {
-            a.href = 'http://www.kakao.com';
-        }
-    });
+// function play() {
+//   let get = document.querySelector(".get");
+//   let link = document.querySelectorAll('.link');
+//   if (get instanceof HTMLImageElement) {
+//     get.src = "/cute.jpg"
+//   }
+//   link.forEach((a) => {
+//     if (a instanceof HTMLAnchorElement) {
+//       a.href = 'http://www.kakao.com'
+//     }
+//   })
+// }
+// class Car {
+//   model: string
+//   money: number
+//   constructor(type: string, money: number) {
+//     this.model = type;
+//     this.money = money;
+//   }
+//   tax(): number {
+//     return this.money * 0.1
+//   }
+// }
+// let car1 = new Car('소나타', 3000)
+// console.log(car1) //콘솔창 출력결과는 { model : '소나타', price : 3000 }
+// console.log(car1.tax()) //콘솔창 출력결과는 300
+// class Word {
+//   num;
+//   str;
+//   constructor(...param: (number | string)[]) {
+//     let num: number[] = [];
+//     let str: string[] = [];
+//     param.forEach((i) => {
+//       if (typeof i === 'string') {
+//         str.push(i);
+//       } else {
+//         num.push(i);
+//       }
+//     })
+//     this.num = num;
+//     this.str = str;
+//   }
+// }
+// let obj = new Word('kim', 3, 5, 'park');
+// console.log(obj.num) //[3,5]
+// console.log(obj.str) //['kim', 'park']
+// interface Student {
+//   name: string,
+// }
+// interface Teacher extends Student {
+//   age: number
+// }
+// let student: Student = { name: 'kim' }
+// let teacher: Teacher = { name: 'kim', age: 20 };
+// interface Item {
+//   brand: string,
+//   serialNumber: number,
+//   model: string[],
+// }
+// interface Shopping {
+//   product: string,
+//   price: number
+// }
+// interface Card extends Shopping {
+//   card: boolean
+// }
+// interface Mathss {
+//   plus: (a: number, b: number) => number,
+//   minus: (a: number, b: number) => number
+// }
+// let item: Item = { brand: 'Samsung', serialNumber: 1360, model: ['TV', 'phone'] }
+// let shopping: Shopping[] = [{ product: '청소기', price: 7000 }, { product: '삼다수', price: 800 }]
+// let ss: Mathss = {
+//   plus(a, b) {
+//     return a + b
+//   },
+//   minus(a, b) {
+//     return a - b
+//   }
+// } 
+// let person = { student: true, age: 20 }
+// function 함수({ student, age }: { student: boolean, age: number }) {
+//   console.log(student, age)
+// }
+// 함수({ student: true, age: 20 })
+// const NumberA = (...a) => {
+//   let result = 0;
+//   a.forEach((i) => {
+//     if (result < i) {
+//       result = i
+//     }
+//   })
+//   return result;
+// }
+// type UserType = {
+//   user: string,
+//   comment: number[],
+//   admin: boolean
+// }
+// console.log(NumberA(6, 3, 7, 2, 0, 1));
+// const Member = ({ user, comment, admin }: UserType) => {
+//   console.log(user, comment, admin)
+// }
+// type 어레이 = (number | string | boolean)[];
+// const Wine = ([a, b, c]: 어레이) => {
+//   console.log(a, b, c)
+// }
+// Wine([40, 'wine', false])
+// type Fish = { swim: string };
+// type Bird = { fly: string };
+// function Animal(animal: Fish | Bird) {
+//   if ("swim" in animal) {
+//     return animal.swim
+//   }
+//   return animal.fly
+// }
+// type Car = {
+//   wheel: '4개',
+//   color: string
+// }
+// type Bike = {
+//   wheel: '2개',
+//   color: string
+// }
+// function CAR(x: Car | Bike) {
+//   if (x.wheel === "4개") {
+//     console.log('이 차는 ' + x.color)
+//   } else {
+//     console.log('이 바이크는 ' + x.color)
+//   }
+// }
+let Time = new Date();
+if (Time instanceof Date) {
+    console.log("참");
 }
-class Car {
-    constructor(type, money) {
-        this.model = type;
-        this.money = money;
-    }
-    tax() {
-        return this.money * 0.1;
-    }
-}
-let car1 = new Car('소나타', 3000);
-console.log(car1); //콘솔창 출력결과는 { model : '소나타', price : 3000 }
-console.log(car1.tax()); //콘솔창 출력결과는 300
-class Word {
-    constructor(...param) {
-        let num = [];
-        let str = [];
-        param.forEach((i) => {
-            if (typeof i === 'string') {
-                str.push(i);
-            }
-            else {
-                num.push(i);
-            }
-        });
-        this.num = num;
-        this.str = str;
-    }
-}
-let obj = new Word('kim', 3, 5, 'park');
-console.log(obj.num); //[3,5]
-console.log(obj.str); //['kim', 'park']
