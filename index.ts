@@ -1,3 +1,10 @@
+import { name } from "./a";
+import { age } from "./a";
+import { Name } from "./a";
+
+
+let 변수: Name = 'park';
+
 // const NamePush = (name?: string) => {
 //   if (name) {
 //     console.log("안녕하세요" + name);
@@ -349,7 +356,146 @@
 //   }
 // }
 
-let Time = new Date();
-if (Time instanceof Date) {
-  console.log("참")
+// let Time = new Date();
+// if (Time instanceof Date) {
+//   console.log("참")
+// }
+
+
+// class User {
+//   name: string;
+//   private familyName: string = 'kim';
+
+//   constructor(a) {
+//     this.name = this.familyName + a
+//   }
+
+//   public ChangeName() {
+//     this.familyName = 'park'
+//   }
+// }
+
+// let 유저1 = new User('민수');
+// 유저1.ChangeName();
+// console.log(유저1);
+
+
+// class Person {
+//   constructor(public name : string,) {
+
+//   }
+// }
+
+// let 자식 = new Person('kim');
+// console.log(자식);
+
+// class User {
+//   protected x: number = 10;
+// }
+
+// class NewUser extends User {
+//   doThis() {
+//     this.x = 20;
+//   }
+// }
+
+// console.log(new NewUser);
+
+class User {
+  // static x = 10;
+  public static x = 10;
+  y = User.x + 20;
 }
+
+console.log(new User());
+
+
+class User2 {
+  private static x = 10;
+  public static y = 20;
+
+  static addOne(a: number) {
+    return User2.x += a;
+  }
+
+  static printX() {
+    return console.log(User.x)
+  }
+}
+
+console.log(User2.addOne(3));
+console.log(User2.addOne(10));
+console.log(User2.printX());
+
+// class Square {
+//   constructor(public width: number, public height: number, public color: string) {
+
+//   }
+//   draw() {
+//     let a = Math.random();
+//     let square = `<div style="position:relative;
+//       top : ${a * 400}px;
+//       left : ${a * 400}px;
+//       width : ${this.width}px;
+//       height : ${this.height}px;
+//       background : ${this.color}"
+//     >
+//     </div>`;
+//     document.body.insertAdjacentHTML('beforeend', square);
+//   }
+// }
+
+// let 네모 = new Square(30, 30, 'red');
+// 네모.draw()
+// 네모.draw()
+// 네모.draw()
+// 네모.draw()
+
+
+// function 함수<MyType>(x:MyType[]):MyType {
+//   return x[0]
+// }
+// let a = 함수<number>([4, 2]);
+// let b = 함수<string>(['4', '2']);
+// console.log(a);
+
+
+// function 함수<MyType extends number>(x:MyType) {
+//   return x - 1;
+// }
+// let a = 함수<number>(100);
+// console.log(a)
+
+
+// function Length<LengthType extends string | string[]>(x: LengthType) {
+//   return x.length;
+// }
+
+// let a = Length<string>('hello');
+// let b = Length<string[]>(['kim', 'park']);
+
+// console.log("::::", a, b);
+
+// interface Animal {
+//   name : string;
+//   age : number 
+// }
+
+// let data = '{"name" : "dog", "age" : 1 }';
+
+// function Animal<Animal> (x : string ) : Animal{
+//   return JSON.parse(x);
+// }
+// let result = Animal<Animal>(data);
+
+// console.log(result);
+
+
+class Person<Type> {
+  name;
+  constructor(a : Type){
+    this.name = a;
+  }
+}
+let a = new Person<string>('어쩌구');
+console.log(a.name)//any 타입이 되었넹 
